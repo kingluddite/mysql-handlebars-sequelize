@@ -1,0 +1,22 @@
+{
+  "name": "mysql-handlebars-sequelize",
+  "version": "1.0.0",
+  "description": "## Branches ``` git checkout html-template git checkout express ``` ## Install dependencies `$ npm i`",
+  "main": "server.js",
+  "scripts": {
+    "dev": "nodemon server.js",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^5.1.0",
+    "mysql2": "^2.1.0",
+    "sequelize": "^6.3.3"
+  }
+}

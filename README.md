@@ -2,19 +2,39 @@
 
 ## Branches
 ```
-git checkout html template
+git checkout html-template
+git checkout express
+```
+## Install dependencies
+`$ npm i`
+
+### Dependencies
+* express
+* express-handlebars
+* sequelize
+* mysql2
+
+### Dev Dependencies
+* nodemon
+
+### Update scripts
+`package.json`
+
+```
+// MORE CODE
+
+"scripts": {
+    "dev": "nodemon server.js",
+    "start": "node server.js"
+  },
+// MORE CODE
 ```
 
-## Install live server globally
+## Run app
+`$ npm run dev`
 
-`$ npm i live-server -g`
+## View in browser
+* [view in browser](http://localhost:5000)
 
-## View website templates
-`$ live-server . (run inside codegig_html)
-
-* Pages
-  - Home With Search
-  - All Gigs
-  - Add Gig
-
-## Add SQL from schema.sql to MSQL Workbench
+## Resources
+* [Modular Sequelize](https://reactsensei.com/modular-sequelize/)
