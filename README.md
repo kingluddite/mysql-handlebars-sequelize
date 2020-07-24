@@ -5,10 +5,13 @@
 git checkout html-template
 git checkout express
 git checkout sequelize
+git checkout modular-sequelize
+git checkout models
 ```
-## Modularize Sequelize
-* Move sequelieze connect into it's own file
-* Import that new db.js into server.js
+
+## Notes
+* Model file names are singular and uppercase
+* `models` is the folder name
 
 
 
