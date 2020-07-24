@@ -13,5 +13,11 @@ git checkout models
 * Model file names are singular and uppercase
 * `models` is the folder name
 
+## Manually drop the table in Workbench
+* Run app again
+
+`$ npm run dev`
+
+
 
 

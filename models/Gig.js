@@ -1,12 +1,20 @@
-const Sequelize = require('sequelize');
-const db = require('../config/db');
+// module.exports = function(sequelize, DataTypes) {
+//   const Gig = sequelize.define('Gig', {
+//     title: DataTypes.STRING,
+//     technologies: DataTypes.STRING,
+//     description: DataTypes.STRING,
+//     budget: DataTypes.STRING,
+//     contact_email: DataTypes.STRING,
+//   });
+//   return Gig;
+// }
+module.exports = function(sequelize, DataTypes) {
+  const User = sequelize.define("User", {
+    email: DataTypes.STRING,
+    password: DataTypes.STRING
+  });
+  return User;
+};
 
-const Gig = db.define('gig', {
-  title: {type: Sequelize.STRING},
-  technologies: {type: Sequelize.STRING},
-  description: {type: Sequelize.STRING},
-  budget: {type: Sequelize.STRING},
-  contact_email: {type: Sequelize.STRING},
-});
 
-module.exports = Gig;
+
