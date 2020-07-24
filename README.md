@@ -2,5 +2,5 @@
 
 ## Branches
 ```
-git checkout html template
+git checkout html-template
 ```
