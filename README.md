@@ -4,37 +4,13 @@
 ```
 git checkout html-template
 git checkout express
-```
-## Install dependencies
-`$ npm i`
-
-### Dependencies
-* express
-* express-handlebars
-* sequelize
-* mysql2
-
-### Dev Dependencies
-* nodemon
-
-### Update scripts
-`package.json`
-
-```
-// MORE CODE
-
-"scripts": {
-    "dev": "nodemon server.js",
-    "start": "node server.js"
-  },
-// MORE CODE
+git checkout sequelize
 ```
 
 ## Run app
 `$ npm run dev`
 
-## View in browser
-* [view in browser](http://localhost:5000)
+* Should connect to db and run queries (in terminal)
 
 ## Resources
-* [Modular Sequelize](https://reactsensei.com/modular-sequelize/)
+* [Getting Started with Sequelize](https://sequelize.org/master/manual/getting-started.html)
