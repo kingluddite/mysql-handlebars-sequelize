@@ -6,11 +6,9 @@ git checkout html-template
 git checkout express
 git checkout sequelize
 ```
+## Modularize Sequelize
+* Move sequelieze connect into it's own file
+* Import that new db.js into server.js
 
-## Run app
-`$ npm run dev`
 
-* Should connect to db and run queries (in terminal)
 
-## Resources
-* [Getting Started with Sequelize](https://sequelize.org/master/manual/getting-started.html)

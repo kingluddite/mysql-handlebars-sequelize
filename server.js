@@ -2,15 +2,10 @@ const express = require('express');
 const exphbs = require('express-handlebars');
 const { Sequelize } = require('sequelize');
 const path = require('path');
+const db = require('./config/db');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
-
-// Database
-const db = new Sequelize('codegig_db', 'root', 'password', {
-  host: 'localhost',
-  dialect: 'mysql'
-});
 
 // use the .authenticate() function to test if the connection is OK:
 db.authenticate()
