@@ -11,34 +11,35 @@ git checkout routes
 ```
 
 ## Notes
-* We add this in our server.js
+
+### `routes/gigs.js`
+* View in browser OK
+* We return a status of 200 so it doesn't "hang"
+* We log to the terminal and see an empty array `[]`
+  - Since we have no data this is what we expect
+* And we see our SQL in terminal
 
 ```
-// MORE CODE
-
-// Gig routes
-app.use('/gigs', require('./routes/gigs'));
-// MORE CODE
+Executing (default): SELECT `id`, `title`, `technologies`, `description`, `budget`, `contact_email`, `createdAt`, `updatedAt` FROM `Gigs` AS `Gig`;
 ```
 
-* And we create `routes/gigs.js`
+## Next
+* We could add data directly in our Database but we'll now add Handlebars to create a form and use that to add data into our Database
 
 ```
 // if this is empty we'll get an error that Router.use() requires a middleware function but got an Object
 const express = require('express');
 const router = express.Router();
+const db = require('../models');
 
-router.get('/', (req, res) => res.send('GIGS'));
+router.get('/', (req, res) => db.Gig.findAll().then(gigs => {
+  console.log(gigs);
+  res.sendStatus(200);
+}).catch(err => console.log(err)));
 
 // don't forget to export it or the error won't go away
 module.exports = router;
 ```
-
-
-## Manually drop the table in Workbench
-* Run app again
-
-`$ npm run dev`
 
 
 
