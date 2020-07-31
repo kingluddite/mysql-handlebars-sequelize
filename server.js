@@ -6,6 +6,12 @@ const db = require('./models');
 const app = express();
 const PORT = process.env.PORT || 5000;
 
+app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
+app.set('view engine', 'handlebars');
+
+// Set static folder
+app.use(express.static(path.join(__dirname, 'public')));
+
 // ROUTES
 // set up home route
 app.get('/', (req, res) => res.send('INDEX'));
