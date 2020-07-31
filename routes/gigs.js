@@ -8,6 +8,7 @@ const db = require('../models');
 router.get('/', (req, res) =>
   db.Gig.findAll()
     .then(gigs => {
+      console.log(gigs);
       res.render('gigs', {
         gigs,
       });
