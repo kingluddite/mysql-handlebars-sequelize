@@ -24,7 +24,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // ROUTES
 // set up home route
-app.get('/', (req, res) => res.send('INDEX'));
+app.get('/', (req, res) => res.render('index', { layout: 'landing' }));
 
 // Gig routes
 app.use('/gigs', require('./routes/gigs'));
