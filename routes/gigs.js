@@ -22,17 +22,43 @@ router.get('/add', (req, res) => res.render('add'));
 // Add a gig
 // we change this from get to post
 router.post('/add', (req, res) => {
-  // normally your data would come from form but we'll first hardcode it
-  const data = {
-    title: 'Looking for a React Senior Developer',
-    technologies: 'react,JavaScript,html,css',
-    budget: '$4000',
-    description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos voluptatibus adipisci alias sint aliquam explicabo, nostrum accusantium iste cum. Officia voluptate esse voluptatum quas dignissimos rerum aperiam iste dolorem illo.',
-    contact_email: 'jane.doe@example.com',
-  };
+  let { title, technologies, budget, description, contact_email } = req.body; // eslint-disable-line camelcase
 
-  const { title, technologies, budget, description, contact_email } = data; // eslint-disable-line camelcase
+  const errors = [];
+
+  // Validate Fields
+  if(!title) {
+    errors.push({ text: 'Please add a title' });
+  }
+  if(!technologies) {
+    errors.push({ text: 'Please add some technologies' });
+  }
+  if(!description) {
+    errors.push({ text: 'Please add a description' });
+  }
+  if(!contact_email) {
+    errors.push({ text: 'Please add a contact email' });
+  }
+
+  // Check for errors
+  if(errors.length > 0) {
+    res.render('add', {
+      errors,
+      title,
+      technologies,
+      budget,
+      description,
+      contact_email
+    });
+  } else {
+    if(!budget) {
+      budget = 'Unknown';
+    } else {
+      budget = `$${budget}`;
+    }
+
+    // Make lowercase and remove space after comma
+    technologies = technologies.toLowerCase().replace(/,[ ]+/g, ',');
   // Insert into gigs table
   db.Gig.create({
     title,
