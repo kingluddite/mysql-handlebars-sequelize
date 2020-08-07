@@ -16,6 +16,9 @@ router.get('/', (req, res) =>
     .catch(err => console.log(err))
 );
 
+// Display add gig form
+router.get('/add', (req, res) => res.render('add'));
+
 // Add a gig
 // we change this from get to post
 router.post('/add', (req, res) => {
