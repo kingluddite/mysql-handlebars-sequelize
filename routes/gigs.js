@@ -72,5 +72,17 @@ router.post('/add', (req, res) => {
   }
 });
 
+// Search for gigs
+router.get('/search', (req, res) => {
+  let { term } = req.query;
+
+  // Make lowercase
+  term = term.toLowerCase();
+
+  db.Gig.findAll({ where: { technologies: { [Op.like]: `%${term}%` } } })
+    .then(gigs => res.render('gigs', { gigs }))
+    .catch(err => res.render('error', { error: err }));
+});
+
 // don't forget to export it or the error won't go away
 module.exports = router;
