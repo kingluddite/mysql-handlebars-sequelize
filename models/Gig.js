@@ -7,7 +7,7 @@ module.exports = function(sequelize, DataTypes) {
     contact_email: DataTypes.STRING,
   });
   return Gig;
-}
+};
 // module.exports = function(sequelize, DataTypes) {
 //   const User = sequelize.define("User", {
 //     email: DataTypes.STRING,
@@ -15,8 +15,6 @@ module.exports = function(sequelize, DataTypes) {
 //   });
 //   return User;
 // };
-
-
 
 // module.exports = function(sequelize, DataTypes) {
 //   var Post = sequelize.define("Post", {
