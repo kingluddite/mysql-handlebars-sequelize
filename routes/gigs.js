@@ -17,7 +17,8 @@ router.get('/', (req, res) =>
 );
 
 // Add a gig
-router.get('/add', (req, res) => {
+// we change this from get to post
+router.post('/add', (req, res) => {
   // normally your data would come from form but we'll first hardcode it
   const data = {
     title: 'Looking for a React Senior Developer',

@@ -14,4 +14,7 @@ git checkout 09-add-handlebars
 
 ## Notes
 * Handlebar permissions error
+  - https://www.npmjs.com/package/@handlebars/allow-prototype-access
+  - https://i.imgur.com/aqqi5S5.png
 * Looping through data in handlebars
+
