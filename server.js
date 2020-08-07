@@ -8,6 +8,10 @@ const path = require('path');
 const db = require('./models');
 
 const app = express();
+
+// use to get req.body
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 const PORT = process.env.PORT || 5000;
 
 app.engine(
